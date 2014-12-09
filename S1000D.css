@@ -1,0 +1,541 @@
+@import "dc.css";
+@namespace xlink "http://www.w3.org/1999/xlink";
+
+identAndStatusSection{
+    display:block;
+} 
+ddnAddress{
+    display:block;
+    border:1px dotted black;
+    padding:3px;
+}
+ddnAddress:before{
+    content:"Address: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+ddnIdent{
+    display:block;
+    margin-left:0.5em;
+}
+ddnIdent:before{
+    display:block;
+    content:"Identifier:";
+    font-weight:bold;
+    color:brown;
+}
+/*<ddnCode modelIdentCode="S1000DBIKE" senderIdent="C3002" receiverIdent="U8025" yearOfDataIssue="2012" seqNumber="00001"/>*/
+ddnCode{
+    display:block;
+    content: oxy_label(text, "    Model: ",width, 100px) oxy_textfield(edit, "@modelIdentCode", columns, 20) "\A" 
+    oxy_label(text, "    Sender: ", width, 100px) oxy_textfield(edit, "@senderIdent", columns, 20) "\A"
+    oxy_label(text, "    Receiver: ", width, 100px) oxy_textfield(edit, "@receiverIdent", columns, 20)  "\A"
+    oxy_label(text, "    Year: ", width, 100px) oxy_textfield(edit, "@yearOfDataIssue", columns, 20)   "\A"
+    oxy_label(text, "    Number: ", width, 100px) oxy_textfield(edit, "@seqNumber", columns, 20)
+}
+dispatchTo{
+    border:1px dotted black;
+    padding:3px;
+}
+dispatchTo:before{
+    content:"To: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+dispatchAddress{
+    display:block;
+    margin-left:0.5em;
+}
+dispatchAddress:before{
+    display:block;
+    content:"Address: ";
+    font-weight:bold;
+    color:brown;
+}
+enterprise{
+    display:block;
+    margin-left:0.5em;
+}
+enterprise:before{
+    display:block;
+    content:"Enterprise: ";
+    font-weight:bold;
+    color:brown;
+}
+enterpriseName{
+    display:block;
+    content:oxy_label(text, "Enterprise Name: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+    visibility:-oxy-collapse-text;
+    padding-left:1em;
+}
+enterpriseUnit{
+    display:block;
+    content:oxy_label(text, "Unit: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+    visibility:-oxy-collapse-text;
+    padding-left:1em;
+}
+/*						<dispatchPerson>
+							<lastName>Schäfer</lastName>
+							<firstName>Uwe</firstName>
+						</dispatchPerson>
+*/
+dispatchPerson{
+    display:block;
+    margin-left:0.5em;
+}
+dispatchPerson:before{
+    display:block;
+    content:"Dispatch Person: ";
+    font-weight:bold;
+    color:brown;
+}
+lastName{
+    display:block;
+    content:oxy_label(text, "  Last Name: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+    visibility:-oxy-collapse-text;
+}
+firstName{
+    display:block;
+    content:oxy_label(text, "  First Name: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+    visibility:-oxy-collapse-text;
+}
+/*						<address>
+							<street>Livry-Gargan-Strasse</street>
+							<postalZipCode>82256</postalZipCode>
+							<city>Fürstenfeldbruck</city>
+							<country>Germany</country>
+						</address>
+*/
+address{
+    display:block;
+    white-space:normal;
+    margin-left:0.5em;
+}
+address:before{
+    display:block;
+    content:"Address: ";
+    font-weight:bold;
+    color:brown;
+}
+street{
+    display:block;
+    content:oxy_label(text, "  Street: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+    visibility:-oxy-collapse-text;
+}
+postalZipCode{
+    display:block;
+    content:oxy_label(text, "  Postal Zip Code: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+    visibility:-oxy-collapse-text;
+}
+city{
+    display:block;
+    content:oxy_label(text, "  City: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+    visibility:-oxy-collapse-text;
+}
+country{
+    display:block;
+    content:oxy_label(text, "  Country: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+    visibility:-oxy-collapse-text;
+}
+
+ddnAddressItems{
+    display:block;
+    padding-left:0.5em;
+}
+issueDate{
+    display:block;
+    
+    content:"Issue Date Day: " oxy_textfield(edit, "@day")
+    "Month: " oxy_textfield(edit, "@month")
+    "Year: " oxy_textfield(edit, "@year");
+}
+dispatchFrom{
+    border:1px dotted black;
+    padding:3px;
+}
+dispatchFrom:before{
+    content:"From: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+ddnStatus{
+    border:1px dotted black;
+    padding:3px;
+}
+ddnStatus:before{
+    content:"Status: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+/*<security securityClassification="01" commercialClassification="cc51" caveat="cv51"/>0*/
+security{
+    display:block;
+    content: oxy_label(text, "Security ", color, brown) " Classification:" oxy_textfield(edit, "@securityClassification") " Commercial Classification: " oxy_textfield(edit, "@commercialClassification") " Caveat:" oxy_textfield(edit, "@caveat")
+}
+
+/*	<dataRestrictions>
+				<restrictionInstructions>
+					<dataDistribution>To be made available to all S1000D users.</dataDistribution>
+					<exportControl>
+						<exportRegistrationStmt>
+							<simplePara>Export of this data module to all countries that are the residence of organizations that are users of S1000D is permitted. Storage of this data module is to be at the discretion of the organization.</simplePara>
+						</exportRegistrationStmt>
+					</exportControl>
+					<dataHandling>There are no specific handling instructions for this data module.</dataHandling>
+					<dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
+					<dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
+				</restrictionInstructions>*/
+				
+dataRestrictions{
+    border:1px dotted black;
+    padding:3px;
+}
+dataRestrictions:before{
+    content:"Restrictions: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+restrictionInstructions{
+    padding:3px;
+}
+restrictionInstructions:before{
+    content:"Instructions: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+dataDistribution{
+    display:block;
+    content:oxy_label(text, "Distribution: ", color, brown);
+}
+exportControl{
+    display:block;
+    padding:3px;
+}
+exportControl:before{
+    content:"Export control: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+exportRegistrationStmt{
+    display:block;
+    padding:3px;
+}
+exportControl:before{
+    content:"Registration Statement: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+dataHandling{
+    display:block;
+    content:oxy_label(text, "Data Handling: ", color, brown);
+}
+dataDestruction{
+    display:block;
+    content:oxy_label(text, "Data Destruction: ", color, brown);
+}
+dataDisclosure{
+    display:block;
+    content:oxy_label(text, "Data Disclosure: ", color, brown);
+}
+simplePara{
+    display:block;
+}
+/*<restrictionInfo>
+					<copyright>
+						<copyrightPara>
+							<emphasis>Copyright (C) 2013</emphasis>by each of the following organizations:<randomList><listItem><para>AeroSpace and Defence Industries Associations of Europe - ASD.</para></listItem><listItem><para>Ministries of Defence of the member countries of ASD.</para></listItem></randomList></copyrightPara>
+						<copyrightPara>
+							<emphasis>Limitations of Liability:</emphasis>
+						</copyrightPara>
+						<copyrightPara>
+							<randomList>
+								<listItem>
+									<para>This material is provided "As Is" and neither ASD nor any person who has contributed to the creation, revision or maintenance of the material makes any representations or warranties, express or implied, including but not limited to, warranties of merchantability or fitness for any particular purpose.</para>
+								</listItem>
+								<listItem>
+									<para>Neither ASD nor any person who has contributed to the creation, revision or maintenance of this material shall be liable for any direct, indirect, special or consequential damages or any other liability arising from any use of this material.</para>
+								</listItem>
+								<listItem>
+									<para>Revisions to this document may occur after its issuance.  The user is responsible for determining if revisions to the material contained in this document have occurred and are applicable.</para>
+								</listItem>
+							</randomList>
+						</copyrightPara>
+					</copyright>
+					<policyStatement>TPSMG TOR 001</policyStatement>
+					<dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
+				</restrictionInfo>*/
+restrictionInfo{
+    display:block;
+    padding:3px;
+}
+restrictionInfo:before{
+    content:"Restriction Information: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+copyright{
+    display:block;
+    padding:3px;
+}
+copyright:before{
+    content:"Copyright: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+copyrightPara{
+    display:block;
+}
+emphasis{
+    display:inline;
+    font-weight:bold;
+}
+randomList{
+    display:block;
+}
+listItem{
+    display:list-item;
+    list-style-type:disc;
+    margin-left:5em;
+}
+para{
+    display:block;
+}
+policyStatement{
+    display:block;
+    content:oxy_label(text, "Policy Statement: ", color, brown);
+}
+dataConds{
+    display:block;
+    content: oxy_label(text, "Data Conditions: ", color, brown);
+}
+/*<authorization>TPSMG</authorization>
+			<brexDmRef>
+				<dmRef>
+					<dmRefIdent>
+						<dmCode modelIdentCode="S1000DBIKE" systemDiffCode="AAA" systemCode="D00" subSystemCode="0" subSubSystemCode="0" assyCode="00" disassyCode="00" disassyCodeVariant="AA" infoCode="022" infoCodeVariant="A" itemLocationCode="D"/>
+					</dmRefIdent>
+				</dmRef>
+			</brexDmRef>
+*/
+authorization{
+    display:block;
+    content: oxy_label(text, "Authorization: ", color, brown);
+}
+brexDmRef{
+    display:block;
+}
+dmRef{
+    display:block;
+    padding:3px;
+}
+dmRef:before{
+    content:"Data Model Reference: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+dmRefIdent{
+    display:block;
+    padding:3px;
+}
+dmRefIdent:before{
+    content:"Identifier: ";
+    display:block;
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+dmCode{
+    display:block;
+    content: "Identifier " " Model Code: " oxy_textfield(edit, "@modelIdentCode") 
+    " System Diff Code: " oxy_textfield(edit, "@systemCode") " Sub-System Code:" oxy_textfield(edit, "@subSystemCode")
+    " Sub-Sub-System Code: " oxy_textfield(edit, "@subSubSystemCode") " Assy Code: " oxy_textfield(edit, "@assyCode")
+    " "
+}
+deliveryList{
+    display:block;
+}
+deliveryList:before{
+    content:"Delivery List: ";
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+deliveryListItem{
+    display:list-item;
+    margin:1em;
+    list-style-type:circle;
+}
+ddn, ddnContent{
+    display:block;
+}
+dispatchFileName{
+    content:oxy_label(text, "File Name: ", width, 150px) oxy_textfield(edit, "#text", columns, 30);
+    visibility:-oxy-collapse-text;
+    display:block;
+}
+
+entityControlNumber{
+    content:oxy_label(text, "Control Number: ", width, 150px) oxy_textfield(edit, "#text", columns, 30);
+    visibility:-oxy-collapse-text;
+    display:block;
+}
+issueInfo{
+    content: oxy_label(text, "Issue number: ", width, 150px) oxy_textfield(edit, "@issueNumber", columns, 10) " In Work: " oxy_textfield(edit, "@inWork", columns, 10);
+    display:block;
+    
+}
+
+mediaIdent{
+    display:block;
+    content:oxy_label(text, "Media Identifier: ", color, brown) oxy_textfield(edit, "@label");
+}
+
+dmodule{
+    display:block;
+}
+/*                <language countryIsoCode="US" languageIsoCode="en"/>*/
+language{
+    display:block;
+    content: "Language " "Country ISO: " oxy_textfield(edit, "@countryIsoCode") " Language ISO: " oxy_textfield(edit, "@languageIsoCode");
+}
+/*                <dmTitle>
+                    <techName>Mountain bicycle</techName>
+                    <infoName>Products cross-reference table</infoName>
+                </dmTitle>
+*/
+dmTitle{
+    display:block;
+    font-size:larger;
+    font-weight:bold;
+}
+techName{
+    display:block;
+}
+infoName{
+    display:block;
+}
+/*            <qualityAssurance>
+                <firstVerification verificationType="tabtop"/>
+            </qualityAssurance>
+            <reasonForUpdate>
+                <simplePara>schema cleanup</simplePara>
+                <simplePara>element/attribute renaming</simplePara>
+            </reasonForUpdate>
+*/
+qualityAssurance{
+    display:block;
+    content: "Quality Assurance: ";
+}
+firstVerification{
+    display:block;
+    content: "First Verification " "Type: " oxy_textfield(edit, "@verificationType");
+}
+
+reasonForUpdate{
+    display:block;
+    content: "Reason For Update: ";
+}
+content{
+    display:block;
+    content: "Content: ";
+}
+
+productCrossRefTable{
+    display:table;
+}
+product{
+    display:table-row;
+}
+/*  <assign applicPropertyIdent="serialno" applicPropertyType="prodattr"
+                    applicPropertyValue="1B070701"/>*/
+assign{
+    display:table-cell;
+    content: "Assign " "\AProperty Ident: " oxy_textfield(edit, "@applicPropertyIdent") "\AProperty Type: " oxy_textfield(edit, "applicPropertyType") 
+    "\AProperty Value: " oxy_textfield(edit, "@applicPropertyValue");
+    border:1px solid;
+    padding:0.5em;
+    
+}
+
+/*            <responsiblePartnerCompany enterpriseCode="SF815">
+                <enterpriseName>SIOM</enterpriseName>
+            </responsiblePartnerCompany>
+*/
+responsiblePartnerCompany{
+    display:block;
+}
+responsiblePartnerCompany:before{
+    content:"Responsible Partner Company: ";
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+
+originator{
+    display:block;
+}
+originator:before{
+    content:"Originator: ";
+    border-bottom:1px solid;
+    font-weight:bold;
+    color:brown;
+}
+
+subScript{
+    font-size:smaller;
+    vertical-align:sub;
+}
+
+superScript{
+    font-size:smaller;
+    vertical-align:super;
+}
+
+verbatimText{
+    font-family:monospace;
+    white-space:pre;
+    font-size:0.9em;
+}
+
+/*<figure id="fig-0001">
+<title>Headset</title>
+<graphic xlink:type="simple" xlink:actuate="onRequest" xlink:show="new" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA23000-0-U8025-00533-A-04-1" xlink:title="Headset" infoEntityIdent="ICN-S1000DBIKE-AAA-DA23000-0-U8025-00533-A-04-1"/>
+</figure>*/
+figure{
+    display:block;
+}
+
+figure > title{
+    display:block;
+}
+figure > title:before{
+    content: "Figure:";
+    font-weight:bold;
+    color:brown;
+    font-size:larger;
+}
+graphic[infoEntityIdent]{
+    content:oxy_url(oxy_unparsed-entity-uri(attr(infoEntityIdent)));
+}

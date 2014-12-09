@@ -1,0 +1,45 @@
+@namespace rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
+@namespace dc "http://www.purl.org/dc/elements/1.1/";
+
+
+/*    <rdf:Description>
+        <dc:title>Mountain bicycle - Products cross-reference table</dc:title>
+        <dc:creator>SF815</dc:creator>
+        <dc:subject>Mountain bicycle - Products cross-reference table</dc:subject>
+        <dc:publisher>SF815</dc:publisher>
+        <dc:contributor>SF815</dc:contributor>
+        <dc:date>2011-01-31</dc:date>
+        <dc:type>text</dc:type>
+        <dc:format>text/xml</dc:format>
+        <dc:identifier>S1000DBIKE-AAA-D00-00-00-00AA-00PA-D_005-00</dc:identifier>
+        <dc:language>en-US</dc:language>
+        <dc:rights>01</dc:rights>
+    </rdf:Description>*/
+rdf|Description > *:before{
+ width:10em;
+ content:oxy_capitalize(oxy_local-name());
+}
+rdf|Description > *{
+    content:oxy_textfield(edit, "#text", columns, 30);
+    visibility:-oxy-collapse-text;
+    display:block;
+    margin:0.2em;
+    margin-left:3em;
+}
+rdf|Description{
+    display:block;
+    border:1px dotted;
+    margin:1em;
+    padding:3px;
+}
+rdf|Description:before{
+    content:"RDF Description: ";
+    display:block;
+    border-bottom:1px solid black;
+    font-weight:bold;
+    color:brown;
+}
+
+dc|date{
+    content:oxy_datePicker(edit, "#text");
+}

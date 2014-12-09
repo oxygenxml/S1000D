@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ddn xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://www.purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink"
+     xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-1/xml_schema_flat/ddn.xsd">
+    <rdf:Description>
+        <dc:title></dc:title>
+        <dc:creator></dc:creator>
+        <dc:subject></dc:subject>
+        <dc:publisher></dc:publisher>
+        <dc:contributor></dc:contributor>
+        <dc:date>${date(xs:date)}</dc:date>
+        <dc:type>text</dc:type>
+        <dc:format>text/xml</dc:format>
+        <dc:identifier></dc:identifier>
+        <dc:language>en-US</dc:language>
+        <dc:rights>01</dc:rights>
+    </rdf:Description>
+    <identAndStatusSection>
+        <ddnAddress>
+            <ddnIdent>
+                <ddnCode modelIdentCode="" senderIdent="" receiverIdent="" yearOfDataIssue="" seqNumber=""/>
+            </ddnIdent>
+            <ddnAddressItems>
+                <issueDate year="" month="" day=""/>
+                <dispatchTo>
+                    <dispatchAddress>
+                        <enterprise>
+                            <enterpriseName></enterpriseName>
+                        </enterprise>
+                        <address>
+                            <city></city>
+                            <country></country>
+                        </address>
+                    </dispatchAddress>
+                </dispatchTo>
+                <dispatchFrom>
+                    <dispatchAddress>
+                        <enterprise>
+                            <enterpriseName></enterpriseName>
+                        </enterprise>
+                        <address>
+                            <city></city>
+                            <country></country>
+                        </address>
+                    </dispatchAddress>
+                </dispatchFrom>
+            </ddnAddressItems>
+        </ddnAddress>
+        <ddnStatus>
+            <security securityClassification=""/>
+            <authorization></authorization>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="" systemDiffCode="" systemCode="" subSystemCode="" subSubSystemCode="" assyCode="" disassyCode="" disassyCodeVariant="" infoCode="" infoCodeVariant="" itemLocationCode=""/>
+                    </dmRefIdent>
+                </dmRef>
+            </brexDmRef>
+        </ddnStatus>
+    </identAndStatusSection>
+</ddn>
