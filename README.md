@@ -7,6 +7,6 @@ To install the framework, download locally and copy the folder called "S1000D" t
 
 You also need to download the S1000D schemas from:
 
-http://cpf.s1000d.org/?sector=issues&page=index
+http://public.s1000d.org/Downloads/Pages/S1000DDownloads.aspx
 
 and place them in the "XML Schema package" directory.
