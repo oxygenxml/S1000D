@@ -10,6 +10,39 @@ oxy|processing-instruction {
 }
 identAndStatusSection {
   display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+}
+identAndStatusSection:before(500) {
+  background-color: #FAFAFA;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: "Indent and Status";
+  font-size: 0.8em;
+}
+dmAddress {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+}
+dmAddress:before(500) {
+  background-color: #FAFAFA;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: "Address";
+  font-size: 0.8em;
 }
 ddnAddress {
   display: block;
@@ -158,6 +191,7 @@ issueDate {
   content: oxy_label(text, "DD / MM / YYYY", width, 25%, color, inherit) oxy_textfield(edit, "@day", columns, 3) "/" oxy_textfield(edit, "@month", columns, 3) "/" oxy_textfield(edit, "@year", columns, 5);
 }
 issueDate:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -191,15 +225,20 @@ ddnStatus:before {
 dmStatus {
   display: block;
   margin: 0.5em;
-  padding-left: 0.5em;
-  border-left: 1px dotted lightgray;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
 }
-dmStatus:before(1000) {
+dmStatus:before(500) {
+  background-color: #FAFAFA;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
   display: block;
-  font-size: xx-small;
-  color: lightgray;
-  content: 'Data module status';
+  color: blue;
   font-family: arial, helvetica, sans-serif;
+  content: 'Status';
+  font-size: 0.8em;
 }
 /*<security securityClassification="01" commercialClassification="cc51" caveat="cv51"/>0*/
 security {
@@ -212,6 +251,7 @@ security {
   content: oxy_label(text, "Classification", width, 25%, color, inherit) oxy_textfield(edit, '@securityClassification', width, 70%) oxy_label(text, "Commercial Classification", width, 25%, color, inherit) oxy_textfield(edit, '@commercialClassification', width, 70%) oxy_label(text, "Caveat", width, 25%, color, inherit) oxy_textfield(edit, '@caveat', width, 70%);
 }
 security:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -391,7 +431,7 @@ dmRef {
 dmRef:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: 'Data Model Reference';
   font-family: arial, helvetica, sans-serif;
 }
@@ -404,7 +444,7 @@ dmRefIdent {
 dmRefIdent:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: 'Data Model Reference Indentifier';
   font-family: arial, helvetica, sans-serif;
 }
@@ -418,6 +458,7 @@ dmCode {
   content: oxy_label(text, "Model Code", width, 25%, color, inherit) oxy_textfield(edit, '@modelIndentCode', width, 70%) oxy_label(text, "System Code", width, 25%, color, inherit) oxy_textfield(edit, '@systemCode', width, 70%) oxy_label(text, "Sub-System Code", width, 25%, color, inherit) oxy_textfield(edit, '@subSystemCode', width, 70%) oxy_label(text, "Sub-Sub-System Code", width, 25%, color, inherit) oxy_textfield(edit, '@subSubSystemCode', width, 70%) oxy_label(text, "Assy Code", width, 25%, color, inherit) oxy_textfield(edit, '@assyCode', width, 70%);
 }
 dmCode:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -465,6 +506,7 @@ issueInfo {
   content: oxy_label(text, "Issue number", width, 25%, color, inherit) oxy_textfield(edit, '@issueNumber', width, 70%) oxy_label(text, "In Work", width, 25%, color, inherit) oxy_textfield(edit, '@inWork', width, 70%);
 }
 issueInfo:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -491,6 +533,7 @@ language {
   content: oxy_label(text, "Country ISO", width, 25%, color, inherit) oxy_textfield(edit, '@countryIsoCode', width, 70%) oxy_label(text, "Language ISO", width, 25%, color, inherit) oxy_textfield(edit, '@languageIsoCode', width, 70%);
 }
 language:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -517,7 +560,7 @@ techName {
 techName:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: 'Technical name';
   font-family: arial, helvetica, sans-serif;
 }
@@ -529,7 +572,7 @@ infoName {
 infoName:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: 'Information name';
   font-family: arial, helvetica, sans-serif;
 }
@@ -550,7 +593,7 @@ qualityAssurance {
 qualityAssurance:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: "Quality Assurance: ";
   font-family: arial, helvetica, sans-serif;
 }
@@ -569,6 +612,7 @@ firstVerification {
   content: oxy_label(text, "Type", width, 25%, color, inherit) oxy_textfield(edit, '@verificationType', width, 70%);
 }
 firstVerification:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -590,6 +634,7 @@ content {
   width: 90%;
 }
 content:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -626,6 +671,7 @@ responsiblePartnerCompany {
   content: oxy_label(text, "Enterprise Code", width, 25%, color, inherit) oxy_textfield(edit, '@enterpriseCode', width, 70%) oxy_label(text, "Id", width, 25%, color, inherit) oxy_textfield(edit, '@id', width, 70%);
 }
 responsiblePartnerCompany:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -644,6 +690,7 @@ originator {
   content: oxy_label(text, "Enterprise Code", width, 25%, color, inherit) oxy_textfield(edit, '@enterpriseCode', width, 70%) oxy_label(text, "Id", width, 25%, color, inherit) oxy_textfield(edit, '@id', width, 70%);
 }
 originator:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -661,7 +708,7 @@ applic {
 applic:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: 'Applicable to';
   font-family: arial, helvetica, sans-serif;
 }
@@ -674,7 +721,7 @@ procedure {
 procedure:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: 'Procedure';
   font-family: arial, helvetica, sans-serif;
 }
@@ -687,6 +734,7 @@ preliminaryRqmts {
   width: 90%;
 }
 preliminaryRqmts:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -704,6 +752,7 @@ closeRqmts {
   width: 90%;
 }
 closeRqmts:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -738,7 +787,7 @@ figure {
 figure:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: 'Figure';
   font-family: arial, helvetica, sans-serif;
 }
@@ -750,7 +799,7 @@ figure > title {
 figure > title:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: 'Title';
   font-family: arial, helvetica, sans-serif;
 }
@@ -766,7 +815,7 @@ description {
 description:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: "Description";
   font-family: arial, helvetica, sans-serif;
 }
@@ -779,7 +828,7 @@ levelledPara {
 levelledPara:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: "Levelled Paragraph";
   font-family: arial, helvetica, sans-serif;
 }
@@ -791,7 +840,7 @@ levelledPara > title {
 levelledPara > title:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: "Levelled Paragraph Title";
   font-family: arial, helvetica, sans-serif;
 }
@@ -804,6 +853,7 @@ mainProcedure {
   width: 90%;
 }
 mainProcedure:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -821,7 +871,7 @@ proceduralStep {
 proceduralStep:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: 'Step';
   font-family: arial, helvetica, sans-serif;
 }
@@ -834,6 +884,7 @@ note {
   width: 90%;
 }
 note:before(500) {
+  background-color: #FAFAFA;
   border-bottom: 1px solid lightgray;
   margin-bottom: 0.5em;
   display: block;
@@ -851,7 +902,7 @@ notePara {
 notePara:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: 'Note Paragraph';
   font-family: arial, helvetica, sans-serif;
 }
@@ -863,7 +914,7 @@ proceduralStep > title {
 proceduralStep > title:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: "Title";
   font-family: arial, helvetica, sans-serif;
 }
@@ -876,7 +927,7 @@ reqCondGroup {
 reqCondGroup:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: "Required Conditions";
   font-family: arial, helvetica, sans-serif;
 }
@@ -889,7 +940,7 @@ reqSupportEquips {
 reqSupportEquips:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: "Required Support Equipments";
   font-family: arial, helvetica, sans-serif;
 }
@@ -907,7 +958,7 @@ reqSupplies {
 reqSupplies:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: "Required Supplies";
   font-family: arial, helvetica, sans-serif;
 }
@@ -925,7 +976,7 @@ reqSpares {
 reqSpares:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: "Required Spares";
   font-family: arial, helvetica, sans-serif;
 }
@@ -943,7 +994,7 @@ reqSafety {
 reqSafety:before(1000) {
   display: block;
   font-size: xx-small;
-  color: lightgray;
+  color: gray;
   content: "Required Safety";
   font-family: arial, helvetica, sans-serif;
 }
@@ -956,5 +1007,21 @@ noConds {
   display: block;
   color: brown;
   content: 'No Conditions';
+}
+internalRef:before {
+  font-style: italic;
+  content: "[" attr(internalRefId) "]";
+  link: "#" attr(internalRefId);
+}
+acronymDefinition:before {
+  content: "(";
+}
+acronymDefinition {
+  font: arial, helvetica, sans-serif;
+  font-size: smaller;
+  color: gray;
+}
+acronymDefinition:after {
+  content: ")";
 }
 /* editors */

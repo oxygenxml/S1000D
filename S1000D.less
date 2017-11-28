@@ -11,8 +11,13 @@ oxy|processing-instruction {
 }
 
 identAndStatusSection{
-    display:block;
+    .section("Indent and Status");
 } 
+
+dmAddress {
+	.section("Address");
+}
+
 ddnAddress{
     display:block;
     border:1px dotted black;
@@ -189,7 +194,7 @@ ddnStatus:before{
 }
 
 dmStatus {
-	.labeledSection('Data module status');
+	.section('Status');
 }
 
 /*<security securityClassification="01" commercialClassification="cc51" caveat="cv51"/>0*/
@@ -621,8 +626,27 @@ noConds {
 }
 
 
+internalRef:before {
+	font-style:italic;
+	content: "[" attr(internalRefId) "]";
+	link: "#" attr(internalRefId);
+}
+
+acronymDefinition:before {
+	content:"(";
+}
+acronymDefinition {
+	font:arial, helvetica, sans-serif;
+	font-size:smaller;
+	color:gray;
+}
+acronymDefinition:after {
+	content:")";
+}
+
 .section(@label) {
 	& {
+		
 		display:block;
 		margin:0.5em;
 		border:1px solid lightgray;
@@ -632,6 +656,7 @@ noConds {
 	}
 	
 	&:before(500) {
+		background-color:#FAFAFA;
 		border-bottom:1px solid lightgray;
 		margin-bottom:0.5em;
 		display:block;
@@ -679,7 +704,7 @@ noConds {
 	&:before(1000) {
 		display:block;
 		font-size:xx-small;
-		color:lightgray;
+		color:gray;
 		content:@label;
 		font-family:arial, helvetica, sans-serif;
 	}
@@ -700,7 +725,7 @@ noConds {
 	&:before(1000) {
 		display:block;
 		font-size:xx-small;
-		color:lightgray;
+		color:gray;
 		content:@label;
 		font-family:arial, helvetica, sans-serif;
 	}
