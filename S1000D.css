@@ -1,107 +1,110 @@
 @import "dc.css";
 @namespace xlink "http://www.w3.org/1999/xlink";
-
-identAndStatusSection{
-    display:block;
-} 
-ddnAddress{
-    display:block;
-    border:1px dotted black;
-    padding:3px;
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+:root {
+  margin: 1em;
 }
-ddnAddress:before{
-    content:"Address: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+oxy|comment,
+oxy|processing-instruction {
+  display: none!important;
 }
-ddnIdent{
-    display:block;
-    margin-left:0.5em;
+identAndStatusSection {
+  display: block;
 }
-ddnIdent:before{
-    display:block;
-    content:"Identifier:";
-    font-weight:bold;
-    color:brown;
+ddnAddress {
+  display: block;
+  border: 1px dotted black;
+  padding: 3px;
+}
+ddnAddress:before {
+  content: "Address: ";
+  display: block;
+  border-bottom: 1px solid;
+  font-weight: bold;
+  color: brown;
+}
+ddnIdent {
+  display: block;
+  margin-left: 0.5em;
+}
+ddnIdent:before {
+  display: block;
+  content: "Identifier:";
+  font-weight: bold;
+  color: brown;
 }
 /*<ddnCode modelIdentCode="S1000DBIKE" senderIdent="C3002" receiverIdent="U8025" yearOfDataIssue="2012" seqNumber="00001"/>*/
-ddnCode{
-    display:block;
-    content: oxy_label(text, "    Model: ",width, 100px) oxy_textfield(edit, "@modelIdentCode", columns, 20) "\A" 
-    oxy_label(text, "    Sender: ", width, 100px) oxy_textfield(edit, "@senderIdent", columns, 20) "\A"
-    oxy_label(text, "    Receiver: ", width, 100px) oxy_textfield(edit, "@receiverIdent", columns, 20)  "\A"
-    oxy_label(text, "    Year: ", width, 100px) oxy_textfield(edit, "@yearOfDataIssue", columns, 20)   "\A"
-    oxy_label(text, "    Number: ", width, 100px) oxy_textfield(edit, "@seqNumber", columns, 20)
+ddnCode {
+  display: block;
+  content: oxy_label(text, "    Model: ", width, 100px) oxy_textfield(edit, "@modelIdentCode", columns, 20) "\A" oxy_label(text, "    Sender: ", width, 100px) oxy_textfield(edit, "@senderIdent", columns, 20) "\A" oxy_label(text, "    Receiver: ", width, 100px) oxy_textfield(edit, "@receiverIdent", columns, 20) "\A" oxy_label(text, "    Year: ", width, 100px) oxy_textfield(edit, "@yearOfDataIssue", columns, 20) "\A" oxy_label(text, "    Number: ", width, 100px) oxy_textfield(edit, "@seqNumber", columns, 20);
 }
-dispatchTo{
-    border:1px dotted black;
-    padding:3px;
+dispatchTo {
+  border: 1px dotted black;
+  padding: 3px;
 }
-dispatchTo:before{
-    content:"To: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+dispatchTo:before {
+  content: "To: ";
+  display: block;
+  border-bottom: 1px solid;
+  font-weight: bold;
+  color: brown;
 }
-dispatchAddress{
-    display:block;
-    margin-left:0.5em;
+dispatchAddress {
+  display: block;
+  margin-left: 0.5em;
 }
-dispatchAddress:before{
-    display:block;
-    content:"Address: ";
-    font-weight:bold;
-    color:brown;
+dispatchAddress:before {
+  display: block;
+  content: "Address: ";
+  font-weight: bold;
+  color: brown;
 }
-enterprise{
-    display:block;
-    margin-left:0.5em;
+enterprise {
+  display: block;
+  margin-left: 0.5em;
 }
-enterprise:before{
-    display:block;
-    content:"Enterprise: ";
-    font-weight:bold;
-    color:brown;
+enterprise:before {
+  display: block;
+  content: "Enterprise: ";
+  font-weight: bold;
+  color: brown;
 }
-enterpriseName{
-    display:block;
-    content:oxy_label(text, "Enterprise Name: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
-    visibility:-oxy-collapse-text;
-    padding-left:1em;
+enterpriseName {
+  display: block;
+  content: oxy_label(text, "Enterprise Name: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+  visibility: -oxy-collapse-text;
+  padding-left: 1em;
 }
-enterpriseUnit{
-    display:block;
-    content:oxy_label(text, "Unit: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
-    visibility:-oxy-collapse-text;
-    padding-left:1em;
+enterpriseUnit {
+  display: block;
+  content: oxy_label(text, "Unit: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+  visibility: -oxy-collapse-text;
+  padding-left: 1em;
 }
 /*						<dispatchPerson>
 							<lastName>Schäfer</lastName>
 							<firstName>Uwe</firstName>
 						</dispatchPerson>
 */
-dispatchPerson{
-    display:block;
-    margin-left:0.5em;
+dispatchPerson {
+  display: block;
+  margin-left: 0.5em;
 }
-dispatchPerson:before{
-    display:block;
-    content:"Dispatch Person: ";
-    font-weight:bold;
-    color:brown;
+dispatchPerson:before {
+  display: block;
+  content: "Dispatch Person: ";
+  font-weight: bold;
+  color: brown;
 }
-lastName{
-    display:block;
-    content:oxy_label(text, "  Last Name: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
-    visibility:-oxy-collapse-text;
+lastName {
+  display: block;
+  content: oxy_label(text, "  Last Name: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+  visibility: -oxy-collapse-text;
 }
-firstName{
-    display:block;
-    content:oxy_label(text, "  First Name: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
-    visibility:-oxy-collapse-text;
+firstName {
+  display: block;
+  content: oxy_label(text, "  First Name: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+  visibility: -oxy-collapse-text;
 }
 /*						<address>
 							<street>Livry-Gargan-Strasse</street>
@@ -110,77 +113,113 @@ firstName{
 							<country>Germany</country>
 						</address>
 */
-address{
-    display:block;
-    white-space:normal;
-    margin-left:0.5em;
+address {
+  display: block;
+  white-space: normal;
+  margin-left: 0.5em;
 }
-address:before{
-    display:block;
-    content:"Address: ";
-    font-weight:bold;
-    color:brown;
+address:before {
+  display: block;
+  content: "Address: ";
+  font-weight: bold;
+  color: brown;
 }
-street{
-    display:block;
-    content:oxy_label(text, "  Street: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
-    visibility:-oxy-collapse-text;
+street {
+  display: block;
+  content: oxy_label(text, "  Street: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+  visibility: -oxy-collapse-text;
 }
-postalZipCode{
-    display:block;
-    content:oxy_label(text, "  Postal Zip Code: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
-    visibility:-oxy-collapse-text;
+postalZipCode {
+  display: block;
+  content: oxy_label(text, "  Postal Zip Code: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+  visibility: -oxy-collapse-text;
 }
-city{
-    display:block;
-    content:oxy_label(text, "  City: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
-    visibility:-oxy-collapse-text;
+city {
+  display: block;
+  content: oxy_label(text, "  City: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+  visibility: -oxy-collapse-text;
 }
-country{
-    display:block;
-    content:oxy_label(text, "  Country: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
-    visibility:-oxy-collapse-text;
+country {
+  display: block;
+  content: oxy_label(text, "  Country: ", width, 100px) oxy_textfield(edit, "#text", columns, 20);
+  visibility: -oxy-collapse-text;
 }
-
-ddnAddressItems{
-    display:block;
-    padding-left:0.5em;
+ddnAddressItems {
+  display: block;
+  padding-left: 0.5em;
 }
-issueDate{
-    display:block;
-    
-    content:"Issue Date Day: " oxy_textfield(edit, "@day")
-    "Month: " oxy_textfield(edit, "@month")
-    "Year: " oxy_textfield(edit, "@year");
+issueDate {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+  content: oxy_label(text, "DD / MM / YYYY", width, 25%, color, inherit) oxy_textfield(edit, "@day", columns, 3) "/" oxy_textfield(edit, "@month", columns, 3) "/" oxy_textfield(edit, "@year", columns, 5);
 }
-dispatchFrom{
-    border:1px dotted black;
-    padding:3px;
+issueDate:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: 'Issue Date';
+  font-size: 0.8em;
 }
-dispatchFrom:before{
-    content:"From: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+dispatchFrom {
+  border: 1px dotted black;
+  padding: 3px;
 }
-ddnStatus{
-    border:1px dotted black;
-    padding:3px;
+dispatchFrom:before {
+  content: "From: ";
+  display: block;
+  border-bottom: 1px solid;
+  font-weight: bold;
+  color: brown;
 }
-ddnStatus:before{
-    content:"Status: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+ddnStatus {
+  border: 1px dotted black;
+  padding: 3px;
+}
+ddnStatus:before {
+  content: "Status: ";
+  display: block;
+  border-bottom: 1px solid;
+  font-weight: bold;
+  color: brown;
+}
+dmStatus {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
+}
+dmStatus:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: 'Data module status';
+  font-family: arial, helvetica, sans-serif;
 }
 /*<security securityClassification="01" commercialClassification="cc51" caveat="cv51"/>0*/
-security{
-    display:block;
-    content: oxy_label(text, "Security ", color, brown) " Classification:" oxy_textfield(edit, "@securityClassification") " Commercial Classification: " oxy_textfield(edit, "@commercialClassification") " Caveat:" oxy_textfield(edit, "@caveat")
+security {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+  content: oxy_label(text, "Classification", width, 25%, color, inherit) oxy_textfield(edit, '@securityClassification', width, 70%) oxy_label(text, "Commercial Classification", width, 25%, color, inherit) oxy_textfield(edit, '@commercialClassification', width, 70%) oxy_label(text, "Caveat", width, 25%, color, inherit) oxy_textfield(edit, '@caveat', width, 70%);
 }
-
+security:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: 'Security';
+  font-size: 0.8em;
+}
 /*	<dataRestrictions>
 				<restrictionInstructions>
 					<dataDistribution>To be made available to all S1000D users.</dataDistribution>
@@ -193,68 +232,67 @@ security{
 					<dataDestruction>Users may destroy this data module in accordance with their own local procedures.</dataDestruction>
 					<dataDisclosure>There are no dissemination limitations that apply to this data module.</dataDisclosure>
 				</restrictionInstructions>*/
-				
-dataRestrictions{
-    border:1px dotted black;
-    padding:3px;
+dataRestrictions {
+  border: 1px dotted black;
+  padding: 3px;
 }
-dataRestrictions:before{
-    content:"Restrictions: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+dataRestrictions:before {
+  content: "Restrictions: ";
+  display: block;
+  border-bottom: 1px solid;
+  font-weight: bold;
+  color: brown;
 }
-restrictionInstructions{
-    padding:3px;
+restrictionInstructions {
+  padding: 3px;
 }
-restrictionInstructions:before{
-    content:"Instructions: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+restrictionInstructions:before {
+  content: "Instructions: ";
+  display: block;
+  border-bottom: 1px solid;
+  font-weight: bold;
+  color: brown;
 }
-dataDistribution{
-    display:block;
-    content:oxy_label(text, "Distribution: ", color, brown);
+dataDistribution {
+  display: block;
+  content: oxy_label(text, "Distribution: ", color, #a52a2a);
 }
-exportControl{
-    display:block;
-    padding:3px;
+exportControl {
+  display: block;
+  padding: 3px;
 }
-exportControl:before{
-    content:"Export control: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+exportControl:before {
+  content: "Export control: ";
+  display: block;
+  border-bottom: 1px solid;
+  font-weight: bold;
+  color: brown;
 }
-exportRegistrationStmt{
-    display:block;
-    padding:3px;
+exportRegistrationStmt {
+  display: block;
+  padding: 3px;
 }
-exportControl:before{
-    content:"Registration Statement: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+exportControl:before {
+  content: "Registration Statement: ";
+  display: block;
+  border-bottom: 1px solid;
+  font-weight: bold;
+  color: brown;
 }
-dataHandling{
-    display:block;
-    content:oxy_label(text, "Data Handling: ", color, brown);
+dataHandling {
+  display: block;
+  content: oxy_label(text, "Data Handling: ", color, #a52a2a);
 }
-dataDestruction{
-    display:block;
-    content:oxy_label(text, "Data Destruction: ", color, brown);
+dataDestruction {
+  display: block;
+  content: oxy_label(text, "Data Destruction: ", color, #a52a2a);
 }
-dataDisclosure{
-    display:block;
-    content:oxy_label(text, "Data Disclosure: ", color, brown);
+dataDisclosure {
+  display: block;
+  content: oxy_label(text, "Data Disclosure: ", color, #a52a2a);
 }
-simplePara{
-    display:block;
+simplePara {
+  display: block;
 }
 /*<restrictionInfo>
 					<copyright>
@@ -280,53 +318,53 @@ simplePara{
 					<policyStatement>TPSMG TOR 001</policyStatement>
 					<dataConds>There are no known conditions that would change the data restrictions for, or security classification of, this data module.</dataConds>
 				</restrictionInfo>*/
-restrictionInfo{
-    display:block;
-    padding:3px;
+restrictionInfo {
+  display: block;
+  padding: 3px;
 }
-restrictionInfo:before{
-    content:"Restriction Information: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+restrictionInfo:before {
+  content: "Restriction Information: ";
+  display: block;
+  border-bottom: 1px solid;
+  font-weight: bold;
+  color: brown;
 }
-copyright{
-    display:block;
-    padding:3px;
+copyright {
+  display: block;
+  padding: 3px;
 }
-copyright:before{
-    content:"Copyright: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+copyright:before {
+  content: "Copyright: ";
+  display: block;
+  border-bottom: 1px solid;
+  font-weight: bold;
+  color: brown;
 }
-copyrightPara{
-    display:block;
+copyrightPara {
+  display: block;
 }
-emphasis{
-    display:inline;
-    font-weight:bold;
+emphasis {
+  display: inline;
+  font-weight: bold;
 }
-randomList{
-    display:block;
+randomList {
+  display: block;
 }
-listItem{
-    display:list-item;
-    list-style-type:disc;
-    margin-left:5em;
+listItem {
+  display: list-item;
+  list-style-type: disc;
+  margin-left: 5em;
 }
-para{
-    display:block;
+para {
+  display: block;
 }
-policyStatement{
-    display:block;
-    content:oxy_label(text, "Policy Statement: ", color, brown);
+policyStatement {
+  display: block;
+  content: oxy_label(text, "Policy Statement: ", color, #a52a2a);
 }
-dataConds{
-    display:block;
-    content: oxy_label(text, "Data Conditions: ", color, brown);
+dataConds {
+  display: block;
+  content: oxy_label(text, "Data Conditions: ", color, #a52a2a);
 }
 /*<authorization>TPSMG</authorization>
 			<brexDmRef>
@@ -337,104 +375,163 @@ dataConds{
 				</dmRef>
 			</brexDmRef>
 */
-authorization{
-    display:block;
-    content: oxy_label(text, "Authorization: ", color, brown);
+authorization {
+  display: block;
+  content: oxy_label(text, "Authorization: ", color, #a52a2a);
 }
-brexDmRef{
-    display:block;
+brexDmRef {
+  display: block;
 }
-dmRef{
-    display:block;
-    padding:3px;
+dmRef {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
 }
-dmRef:before{
-    content:"Data Model Reference: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+dmRef:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: 'Data Model Reference';
+  font-family: arial, helvetica, sans-serif;
 }
-dmRefIdent{
-    display:block;
-    padding:3px;
+dmRefIdent {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
 }
-dmRefIdent:before{
-    content:"Identifier: ";
-    display:block;
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+dmRefIdent:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: 'Data Model Reference Indentifier';
+  font-family: arial, helvetica, sans-serif;
 }
-dmCode{
-    display:block;
-    content: "Identifier " " Model Code: " oxy_textfield(edit, "@modelIdentCode") 
-    " System Diff Code: " oxy_textfield(edit, "@systemCode") " Sub-System Code:" oxy_textfield(edit, "@subSystemCode")
-    " Sub-Sub-System Code: " oxy_textfield(edit, "@subSubSystemCode") " Assy Code: " oxy_textfield(edit, "@assyCode")
-    " "
+dmCode {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+  content: oxy_label(text, "Model Code", width, 25%, color, inherit) oxy_textfield(edit, '@modelIndentCode', width, 70%) oxy_label(text, "System Code", width, 25%, color, inherit) oxy_textfield(edit, '@systemCode', width, 70%) oxy_label(text, "Sub-System Code", width, 25%, color, inherit) oxy_textfield(edit, '@subSystemCode', width, 70%) oxy_label(text, "Sub-Sub-System Code", width, 25%, color, inherit) oxy_textfield(edit, '@subSubSystemCode', width, 70%) oxy_label(text, "Assy Code", width, 25%, color, inherit) oxy_textfield(edit, '@assyCode', width, 70%);
 }
-deliveryList{
-    display:block;
+dmCode:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: 'Data Model';
+  font-size: 0.8em;
 }
-deliveryList:before{
-    content:"Delivery List: ";
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+deliveryList {
+  display: block;
 }
-deliveryListItem{
-    display:list-item;
-    margin:1em;
-    list-style-type:circle;
+deliveryList:before {
+  content: "Delivery List: ";
+  border-bottom: 1px solid;
+  font-weight: bold;
+  color: brown;
 }
-ddn, ddnContent{
-    display:block;
+deliveryListItem {
+  display: list-item;
+  margin: 1em;
+  list-style-type: circle;
 }
-dispatchFileName{
-    content:oxy_label(text, "File Name: ", width, 150px) oxy_textfield(edit, "#text", columns, 30);
-    visibility:-oxy-collapse-text;
-    display:block;
+ddn,
+ddnContent {
+  display: block;
 }
-
-entityControlNumber{
-    content:oxy_label(text, "Control Number: ", width, 150px) oxy_textfield(edit, "#text", columns, 30);
-    visibility:-oxy-collapse-text;
-    display:block;
+dispatchFileName {
+  content: oxy_label(text, "File Name: ", width, 150px) oxy_textfield(edit, "#text", columns, 30);
+  visibility: -oxy-collapse-text;
+  display: block;
 }
-issueInfo{
-    content: oxy_label(text, "Issue number: ", width, 150px) oxy_textfield(edit, "@issueNumber", columns, 10) " In Work: " oxy_textfield(edit, "@inWork", columns, 10);
-    display:block;
-    
+entityControlNumber {
+  content: oxy_label(text, "Control Number: ", width, 150px) oxy_textfield(edit, "#text", columns, 30);
+  visibility: -oxy-collapse-text;
+  display: block;
 }
-
-mediaIdent{
-    display:block;
-    content:oxy_label(text, "Media Identifier: ", color, brown) oxy_textfield(edit, "@label");
+issueInfo {
+  content: " : " oxy_textfield(edit, "@", columns, 10);
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+  content: oxy_label(text, "Issue number", width, 25%, color, inherit) oxy_textfield(edit, '@issueNumber', width, 70%) oxy_label(text, "In Work", width, 25%, color, inherit) oxy_textfield(edit, '@inWork', width, 70%);
 }
-
-dmodule{
-    display:block;
+issueInfo:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: 'Issue Information';
+  font-size: 0.8em;
+}
+mediaIdent {
+  display: block;
+  content: oxy_label(text, "Media Identifier: ", color, #a52a2a) oxy_textfield(edit, "@label");
+}
+dmodule {
+  display: block;
 }
 /*                <language countryIsoCode="US" languageIsoCode="en"/>*/
-language{
-    display:block;
-    content: "Language " "Country ISO: " oxy_textfield(edit, "@countryIsoCode") " Language ISO: " oxy_textfield(edit, "@languageIsoCode");
+language {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+  content: oxy_label(text, "Country ISO", width, 25%, color, inherit) oxy_textfield(edit, '@countryIsoCode', width, 70%) oxy_label(text, "Language ISO", width, 25%, color, inherit) oxy_textfield(edit, '@languageIsoCode', width, 70%);
+}
+language:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: 'Language';
+  font-size: 0.8em;
 }
 /*                <dmTitle>
                     <techName>Mountain bicycle</techName>
                     <infoName>Products cross-reference table</infoName>
                 </dmTitle>
 */
-dmTitle{
-    display:block;
-    font-size:larger;
-    font-weight:bold;
+dmTitle {
+  display: block;
+  font-size: larger;
+  font-weight: bold;
 }
-techName{
-    display:block;
+techName {
+  display: block;
+  font-size: 2em;
+  margin: 0.2em;
 }
-infoName{
-    display:block;
+techName:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: 'Technical name';
+  font-family: arial, helvetica, sans-serif;
+}
+infoName {
+  display: block;
+  font-size: 2em;
+  margin: 0.2em;
+}
+infoName:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: 'Information name';
+  font-family: arial, helvetica, sans-serif;
 }
 /*            <qualityAssurance>
                 <firstVerification verificationType="tabtop"/>
@@ -444,98 +541,420 @@ infoName{
                 <simplePara>element/attribute renaming</simplePara>
             </reasonForUpdate>
 */
-qualityAssurance{
-    display:block;
-    content: "Quality Assurance: ";
+qualityAssurance {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
 }
-firstVerification{
-    display:block;
-    content: "First Verification " "Type: " oxy_textfield(edit, "@verificationType");
+qualityAssurance:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: "Quality Assurance: ";
+  font-family: arial, helvetica, sans-serif;
 }
-
-reasonForUpdate{
-    display:block;
-    content: "Reason For Update: ";
+unverified {
+  display: block;
+  color: brown;
+  content: "Unverified";
 }
-content{
-    display:block;
-    content: "Content: ";
+firstVerification {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+  content: oxy_label(text, "Type", width, 25%, color, inherit) oxy_textfield(edit, '@verificationType', width, 70%);
 }
-
-productCrossRefTable{
-    display:table;
+firstVerification:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: "First Verification";
+  font-size: 0.8em;
 }
-product{
-    display:table-row;
+reasonForUpdate {
+  display: block;
+  content: "Reason For Update: ";
+}
+content {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+}
+content:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: "Content";
+  font-size: 0.8em;
+}
+productCrossRefTable {
+  display: table;
+}
+product {
+  display: table-row;
 }
 /*  <assign applicPropertyIdent="serialno" applicPropertyType="prodattr"
                     applicPropertyValue="1B070701"/>*/
-assign{
-    display:table-cell;
-    content: "Assign " "\AProperty Ident: " oxy_textfield(edit, "@applicPropertyIdent") "\AProperty Type: " oxy_textfield(edit, "applicPropertyType") 
-    "\AProperty Value: " oxy_textfield(edit, "@applicPropertyValue");
-    border:1px solid;
-    padding:0.5em;
-    
+assign {
+  display: table-cell;
+  content: "Assign " "\AProperty Ident: " oxy_textfield(edit, "@applicPropertyIdent") "\AProperty Type: " oxy_textfield(edit, "applicPropertyType") "\AProperty Value: " oxy_textfield(edit, "@applicPropertyValue");
+  border: 1px solid;
+  padding: 0.5em;
 }
-
 /*            <responsiblePartnerCompany enterpriseCode="SF815">
                 <enterpriseName>SIOM</enterpriseName>
             </responsiblePartnerCompany>
 */
-responsiblePartnerCompany{
-    display:block;
+responsiblePartnerCompany {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+  content: oxy_label(text, "Enterprise Code", width, 25%, color, inherit) oxy_textfield(edit, '@enterpriseCode', width, 70%) oxy_label(text, "Id", width, 25%, color, inherit) oxy_textfield(edit, '@id', width, 70%);
 }
-responsiblePartnerCompany:before{
-    content:"Responsible Partner Company: ";
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+responsiblePartnerCompany:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: "Responsible Partner Company";
+  font-size: 0.8em;
 }
-
-originator{
-    display:block;
+originator {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+  content: oxy_label(text, "Enterprise Code", width, 25%, color, inherit) oxy_textfield(edit, '@enterpriseCode', width, 70%) oxy_label(text, "Id", width, 25%, color, inherit) oxy_textfield(edit, '@id', width, 70%);
 }
-originator:before{
-    content:"Originator: ";
-    border-bottom:1px solid;
-    font-weight:bold;
-    color:brown;
+originator:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: "Originator";
+  font-size: 0.8em;
 }
-
-subScript{
-    font-size:smaller;
-    vertical-align:sub;
+applic {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
 }
-
-superScript{
-    font-size:smaller;
-    vertical-align:super;
+applic:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: 'Applicable to';
+  font-family: arial, helvetica, sans-serif;
 }
-
-verbatimText{
-    font-family:monospace;
-    white-space:pre;
-    font-size:0.9em;
+procedure {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
 }
-
+procedure:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: 'Procedure';
+  font-family: arial, helvetica, sans-serif;
+}
+preliminaryRqmts {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+}
+preliminaryRqmts:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: 'Preliminary Requirements';
+  font-size: 0.8em;
+}
+closeRqmts {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+}
+closeRqmts:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: 'Close Requirements';
+  font-size: 0.8em;
+}
+subScript {
+  font-size: smaller;
+  vertical-align: sub;
+}
+superScript {
+  font-size: smaller;
+  vertical-align: super;
+}
+verbatimText {
+  font-family: monospace;
+  white-space: pre;
+  font-size: 0.9em;
+}
 /*<figure id="fig-0001">
 <title>Headset</title>
 <graphic xlink:type="simple" xlink:actuate="onRequest" xlink:show="new" xlink:href="URN:S1000D:ICN-S1000DBIKE-AAA-DA23000-0-U8025-00533-A-04-1" xlink:title="Headset" infoEntityIdent="ICN-S1000DBIKE-AAA-DA23000-0-U8025-00533-A-04-1"/>
 </figure>*/
-figure{
-    display:block;
+figure {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
 }
-
-figure > title{
-    display:block;
+figure:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: 'Figure';
+  font-family: arial, helvetica, sans-serif;
 }
-figure > title:before{
-    content: "Figure:";
-    font-weight:bold;
-    color:brown;
-    font-size:larger;
+figure > title {
+  display: block;
+  font-size: 2em;
+  margin: 0.2em;
 }
-graphic[infoEntityIdent]{
-    content:oxy_url(oxy_unparsed-entity-uri(attr(infoEntityIdent)));
+figure > title:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: 'Title';
+  font-family: arial, helvetica, sans-serif;
 }
+graphic[infoEntityIdent] {
+  content: oxy_url(oxy_unparsed-entity-uri(attr(infoEntityIdent)));
+}
+description {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
+}
+description:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: "Description";
+  font-family: arial, helvetica, sans-serif;
+}
+levelledPara {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
+}
+levelledPara:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: "Levelled Paragraph";
+  font-family: arial, helvetica, sans-serif;
+}
+levelledPara > title {
+  display: block;
+  font-size: 2em;
+  margin: 0.2em;
+}
+levelledPara > title:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: "Levelled Paragraph Title";
+  font-family: arial, helvetica, sans-serif;
+}
+mainProcedure {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+}
+mainProcedure:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: 'Main Procedure';
+  font-size: 0.8em;
+}
+proceduralStep {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
+}
+proceduralStep:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: 'Step';
+  font-family: arial, helvetica, sans-serif;
+}
+note {
+  display: block;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  padding: 0.2em;
+  border-radius: 5px;
+  width: 90%;
+}
+note:before(500) {
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+  display: block;
+  color: blue;
+  font-family: arial, helvetica, sans-serif;
+  content: 'Note';
+  font-size: 0.8em;
+}
+notePara {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
+}
+notePara:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: 'Note Paragraph';
+  font-family: arial, helvetica, sans-serif;
+}
+proceduralStep > title {
+  display: block;
+  font-size: 2em;
+  margin: 0.2em;
+}
+proceduralStep > title:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: "Title";
+  font-family: arial, helvetica, sans-serif;
+}
+reqCondGroup {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
+}
+reqCondGroup:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: "Required Conditions";
+  font-family: arial, helvetica, sans-serif;
+}
+reqSupportEquips {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
+}
+reqSupportEquips:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: "Required Support Equipments";
+  font-family: arial, helvetica, sans-serif;
+}
+noSupportEquips {
+  display: block;
+  color: brown;
+  content: 'No Support Equipments';
+}
+reqSupplies {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
+}
+reqSupplies:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: "Required Supplies";
+  font-family: arial, helvetica, sans-serif;
+}
+noSupplies {
+  display: block;
+  color: brown;
+  content: 'No Supplies';
+}
+reqSpares {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
+}
+reqSpares:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: "Required Spares";
+  font-family: arial, helvetica, sans-serif;
+}
+noSpares {
+  display: block;
+  color: brown;
+  content: 'No Spares';
+}
+reqSafety {
+  display: block;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  border-left: 1px dotted lightgray;
+}
+reqSafety:before(1000) {
+  display: block;
+  font-size: xx-small;
+  color: lightgray;
+  content: "Required Safety";
+  font-family: arial, helvetica, sans-serif;
+}
+noSafety {
+  display: block;
+  color: brown;
+  content: 'No Safety';
+}
+noConds {
+  display: block;
+  color: brown;
+  content: 'No Conditions';
+}
+/* editors */
