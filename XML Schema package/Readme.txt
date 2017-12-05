@@ -1,3 +1,3 @@
-In this folder you need to download and place the S1000D schemas from:
+In this folder you need to register, download and place the S1000D schemas from:
 
-http://cpf.s1000d.org/?sector=issues&page=index
+http://public.s1000d.org/Downloads/Pages/S1000DDownloads.aspx
