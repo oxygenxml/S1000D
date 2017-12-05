@@ -9,4 +9,4 @@ You also need to download the S1000D schemas from:
 
 http://public.s1000d.org/Downloads/Pages/S1000DDownloads.aspx
 
-and place them in the "XML Schema package" directory.
+unzip them and copy the entire set of the resources from the "XML Schema package" directory to the corresponding "XML Schema package" from the "S1000D" framework folder.
